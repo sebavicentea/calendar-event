@@ -1,0 +1,22 @@
+.day-container {
+    height: 100px;
+    cursor: pointer;
+    background-color: white;
+    .number {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .day-content {
+        padding: 5px;
+        .reminder-view {
+            font-size: 12px;
+            border-radius: 5px;
+            padding: 0px 5px;
+            background: #FFE8E5;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+    }
+}
+

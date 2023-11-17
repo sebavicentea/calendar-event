@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-icon {
+    font-size: 16px;
+}
+
+
+
+.btn-primary {
+    border-radius: 8px;
+    background-color: #FF836D;
+    color: white;
+    padding: 8px;
+    border: none;
+    .mat-button-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        .mat-icon {
+            font-size: 16px;
+            height: 16px;
+            width: 16px;
+        }
+    }
+
+}
+
+.btn-primary[disabled] {
+    background-color: #F3F3F3;
+    color: #A1A1A1;
+}
+

@@ -1,0 +1,52 @@
+.reminder-notification-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    .card-container {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        border-radius: 20px;
+        background-color: #FFE8E5;
+        min-width: 400px;
+        padding: 20px;
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .title {
+                font-size: 18px;
+                font-weight: bold;
+            }
+            .actions {
+                cursor: pointer
+            }
+        }
+        .time {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            .mat-icon {
+                height: 16px;
+                width: 16px;
+            }
+        }
+        .city-info {
+            .city-title {
+                font-weight: bold;
+                font-size: 16px;
+                margin: 10px 0;
+            }
+            .no-city {
+                font-style: italic;
+            }
+        }
+        .min {
+            margin-right: 20px;
+        }
+        .name-label, .min-label, .max-label {
+            font-weight: bold;
+            padding-right: 5px;
+        }
+    }
+}

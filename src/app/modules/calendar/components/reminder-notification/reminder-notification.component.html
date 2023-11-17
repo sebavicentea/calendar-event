@@ -1,0 +1,39 @@
+<mat-dialog-content>
+  <div class="reminder-notification-container">
+    <div *ngFor="let reminder of data" class="card-container" [style.background-color]="reminder.color">
+      <div class="header">
+        <div class="title">{{reminder.text}}</div>
+      </div>
+      <div class="time">
+        <mat-icon>schedule</mat-icon>
+        {{reminder.dateTime | date: 'HH:mm'}}
+      </div>
+      <div class="city-info" [class.no-info]="!reminder.city">
+        <div class="city-title">City</div>
+        <ng-container *ngIf="reminder.city; else noCity">
+          <div class="city-name">
+            <span class="name-label">Name:</span>
+            <span class="name-value">{{reminder.city}}</span>
+          </div>
+          <div *ngIf="reminder.weather as weather" class="city-weather">
+            <span class="min">
+              <span class="min-label">Min: </span>
+              <span class="min-value">{{weather.days[0].tempmin}}</span>
+            </span>
+            <span class="max">
+              <span class="max-label">Max: </span>
+              <span class="max-value">{{weather.days[0].tempmax}}</span>
+            </span>
+          </div>
+        </ng-container>
+
+        <ng-template #noCity>
+          <div class="no-city">No city has been selected</div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button class="btn-primary" mat-button [mat-dialog-close]="true" cdkFocusInitial >Ok</button>
+</mat-dialog-actions>

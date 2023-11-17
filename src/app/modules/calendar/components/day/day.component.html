@@ -1,0 +1,10 @@
+<div class="day-container">
+    <div class="number">{{ day.number }}</div>
+    <div class="day-content">
+        <div *ngFor="let reminder of reminders$ | async" class="reminder-view" [style.background-color]="reminder.color">
+            {{reminder.dateTime | date: 'HH:mm'}}
+            {{reminder.text}}
+        </div>
+    </div>
+    
+</div>

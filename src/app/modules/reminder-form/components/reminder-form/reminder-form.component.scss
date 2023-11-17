@@ -1,0 +1,20 @@
+.reminder-form {
+    display: flex;
+    flex-direction: column;
+    min-width: 400px;
+    gap: 20px;
+    .field {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        select, input {
+            width: 100%;
+            padding: 8px;
+            border-radius: 8px;
+        }
+        .mat-icon {
+            width: 16px;
+            height: 16px;
+        }
+    }    
+}

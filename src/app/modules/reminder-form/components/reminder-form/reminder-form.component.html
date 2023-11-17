@@ -1,0 +1,33 @@
+
+
+<div mat-dialog-title class="form-title">
+    {{reminderForm.value.id ? 'Edit Reminder' :'Add Reminder'}}
+</div>
+<mat-dialog-content>
+    <form [formGroup]="reminderForm" (ngSubmit)="submitForm()" class="reminder-form">
+        <div class="field">
+            <mat-icon class="mat-icon-outlined">abc</mat-icon>
+            <input type="text" formControlName="text" placeholder="Text" name="text" />
+        </div>
+        <div class="field">
+            <mat-icon class="mat-icon-outlined">schedule</mat-icon>
+            <input type="datetime-local" formControlName="dateTime" name="dateTime" />
+
+        </div>
+        <div class="field">
+            <mat-icon class="mat-icon-outlined">location_on</mat-icon>
+            <input type="text" formControlName="city" placeholder="City" name="city" />
+        </div>
+        <div class="field"> 
+            <mat-icon class="mat-icon-outlined">palette</mat-icon>
+            <!-- <input type="text" formControlName="color" placeholder="Color" /> -->
+            <select formControlName="color" placeholder="Select color" name="color">
+                <option *ngFor="let color of colorOptions" [value]="color" [style.background-color]="color">{{ color }}</option>
+              </select>
+        </div>
+
+        <button type="submit" class="btn-primary" [disabled]="!reminderForm.valid">
+            {{reminderForm.value.id ? 'Edit Reminder' :'Add Reminder'}}
+        </button>
+    </form>
+    </mat-dialog-content>

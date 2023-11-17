@@ -1,0 +1,21 @@
+<div class="calendar">
+  <div class="header">
+    <button class="prev" (click)="onPreviousMonth()">❮</button>
+    <div class="month-year">{{ calendarCreator.getMonthName(monthNumber) }} &nbsp; {{ year }}</div>
+    <button class="next" (click)="onNextMonth()">❯</button>
+  </div>
+  <div class="days">
+    <div class="day">Mon</div>
+    <div class="day">Tue</div>
+    <div class="day">Wed</div>
+    <div class="day">Thu</div>
+    <div class="day">Fri</div>
+    <div class="day">Sat</div>
+    <div class="day">Sun</div>
+  </div>
+  <div class="grid">
+    <span *ngFor='let day of monthDays' (click)="openDayView(day)">
+      <app-day [day]="day"></app-day>    
+    </span>
+  </div>
+</div>
